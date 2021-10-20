@@ -11,6 +11,9 @@ import product_6 from '../assets/images/img-6.jpg';
 import product_7 from '../assets/images/img-7.jpg';
 import product_8 from '../assets/images/img-8.jpg';
 import product_9 from '../assets/images/img-9.jpg';
+import pic_1 from '../assets/images/pic-1.png';
+import pic_2 from '../assets/images/pic-2.png';
+import pic_3 from '../assets/images/pic-3.png';
 
 const data = [
     {
@@ -119,4 +122,22 @@ const products = [
         price_: '19.99',
     },
 ];
-export { data, icons, products };
+
+const reviews = [
+    {
+        key: '1',
+        img: pic_1,
+        name: 'Dao',
+    },
+    {
+        key: '2',
+        img: pic_2,
+        name: 'Mimi',
+    },
+    {
+        key: '3',
+        img: pic_3,
+        name: 'Joh',
+    },
+];
+export { data, icons, products, reviews };

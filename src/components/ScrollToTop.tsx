@@ -2,7 +2,6 @@ import * as React from 'react';
 
 const ScrollToTopButton: React.FC = () => {
     const [visible, setVisible] = React.useState<boolean>(false);
-
     const toggleVisible = () => {
         const scrolled = document.documentElement.scrollTop;
         if (scrolled > 300) {

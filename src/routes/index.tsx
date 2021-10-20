@@ -1,11 +1,15 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import videoUrl from '../assets/images/about-vid.mp4';
-import { icons, products } from '../utils/data';
+import contactImg from '../assets/images/contact-img.svg';
+import paymentImg from '../assets/images/payment.png';
+import { ScrollToTopButton } from '../components';
+import { icons, products, reviews } from '../utils/data';
 
 const Routes: React.FC = () => {
     return (
         <div>
+            <ScrollToTopButton />
             {/* HEADER SECTION */}
             <header>
                 <input type="checkbox" name="" id="toggler" />
@@ -132,6 +136,115 @@ const Routes: React.FC = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+            </section>
+
+            {/* <!-- review section  --> */}
+
+            <section className="review" id="review">
+                <h1 className="heading">
+                    customer&apos;s <span>review</span>{' '}
+                </h1>
+
+                <div className="box-container">
+                    {reviews.map(({ key, name, img }) => (
+                        <div className="box" key={key}>
+                            <div className="stars">
+                                <i className="fas fa-star" />
+                                <i className="fas fa-star" />
+                                <i className="fas fa-star" />
+                                <i className="fas fa-star" />
+                                <i className="fas fa-star" />
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                                asperiores laboriosam praesentium enim maiores? Ad repellat
+                                voluptates alias facere repudiandae dolor accusamus enim ut odit,
+                                aliquam nesciunt eaque nulla dignissimos.
+                            </p>
+                            <div className="user">
+                                <img src={img} alt="" />
+                                <div className="user-info">
+                                    <h3>{name}</h3>
+                                    <span>happy customer</span>
+                                </div>
+                            </div>
+                            <span className="fas fa-quote-right" />
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/*  <!-- contact section  --> */}
+
+            <section className="contact" id="contact">
+                <h1 className="heading">
+                    {' '}
+                    <span> contact </span> us{' '}
+                </h1>
+
+                <div className="row">
+                    <form action="">
+                        <input type="text" placeholder="name" className="box" />
+                        <input type="email" placeholder="email" className="box" />
+                        <input type="number" placeholder="number" className="box" />
+                        <textarea
+                            name=""
+                            className="box"
+                            placeholder="message"
+                            id=""
+                            cols={30}
+                            rows={10}
+                        />
+                        <input type="submit" value="send message" className="btn" />
+                    </form>
+
+                    <div className="image">
+                        <img src={contactImg} alt="" />
+                    </div>
+                </div>
+            </section>
+
+            {/* <!-- footer section starts  --> */}
+
+            <section className="footer">
+                <div className="box-container">
+                    <div className="box">
+                        <h3>quick links</h3>
+                        <a href="#home">home</a>
+                        <a href="#about">about</a>
+                        <a href="#products">products</a>
+                        <a href="#review">review</a>
+                        <a href="#contact">contact</a>
+                    </div>
+
+                    <div className="box">
+                        <h3>extra links</h3>
+                        <a href="#my-account">my account</a>
+                        <a href="#my-order">my order</a>
+                        <a href="#my-favorite">my favorite</a>
+                    </div>
+
+                    <div className="box">
+                        <h3>locations</h3>
+                        <a href="#usa">USA</a>
+                        <a href="#japan">japan</a>
+                        <a href="#france">france</a>
+                        <a href="#india">india</a>
+                    </div>
+
+                    <div className="box">
+                        <h3>contact info</h3>
+                        <a href="#phone">+0123-4006-7890</a>
+                        <a href="#example">example@gmail.com</a>
+                        <a href="#mum">mumbai, dhaka - 400104</a>
+                        <img src={paymentImg} alt="" />
+                    </div>
+                </div>
+
+                <div className="credit">
+                    {' '}
+                    created by <span> mr. j-rayhan </span> | all rights reserved
                 </div>
             </section>
         </div>
