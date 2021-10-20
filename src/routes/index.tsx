@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import videoUrl from '../assets/images/about-vid.mp4';
-import { icons } from '../utils/data';
+import { icons, products } from '../utils/data';
 
 const Routes: React.FC = () => {
     return (
@@ -96,6 +96,43 @@ const Routes: React.FC = () => {
                         </div>
                     </div>
                 ))}
+            </section>
+
+            {/* <!-- products section  --> */}
+
+            <section className="products" id="products">
+                <h1 className="heading">
+                    latest <span>products</span>
+                </h1>
+
+                <div className="box-container">
+                    {products.map(({ key, discount, img, title, price, price_ }) => (
+                        <div className="box" key={key}>
+                            <span className="discount">{discount}%</span>
+                            <div className="image">
+                                <img src={img} alt="" />
+                                <div className="icons">
+                                    <a href="#heart">
+                                        <i className="fas fa-heart" />
+                                    </a>
+                                    <a href="#cart" className="cart-btn">
+                                        add to cart
+                                    </a>
+                                    <a href="#share">
+                                        <i className="fas fa-share" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="content">
+                                <h3>{title || 'flower pot'}</h3>
+                                <div className="price">
+                                    {' '}
+                                    ${price} <span>${price_}</span>{' '}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </section>
         </div>
     );
